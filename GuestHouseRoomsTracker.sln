@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuestHouseRoomsTracker", "GuestHouseRoomsTracker\GuestHouseRoomsTracker.csproj", "{932C7D2D-64D7-400C-B87E-D27ECA0B5D43}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuestHouseRoomsTracker.Core", "GuestHouseRoomsTracker.Core\GuestHouseRoomsTracker.Core.csproj", "{6D51037D-C4DB-4DAC-A964-F0147FF4734E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuestHouseRoomsTracker.Models", "GuestHouseRoomsTracker.Models\GuestHouseRoomsTracker.Models.csproj", "{4789CFCF-30CD-4454-ACF8-9C5A6FB226DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuestHouseRoomsTracker.Common", "GuestHouseRoomsTracker.Common\GuestHouseRoomsTracker.Common.csproj", "{8FDF70F5-E070-4E96-9829-CBD365873654}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{4789CFCF-30CD-4454-ACF8-9C5A6FB226DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4789CFCF-30CD-4454-ACF8-9C5A6FB226DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4789CFCF-30CD-4454-ACF8-9C5A6FB226DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FDF70F5-E070-4E96-9829-CBD365873654}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FDF70F5-E070-4E96-9829-CBD365873654}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FDF70F5-E070-4E96-9829-CBD365873654}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FDF70F5-E070-4E96-9829-CBD365873654}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

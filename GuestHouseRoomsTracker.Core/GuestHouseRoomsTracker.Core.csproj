@@ -2,9 +2,15 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GuestHouseRoomsTracker.Common\GuestHouseRoomsTracker.Common.csproj" />
+    <ProjectReference Include="..\GuestHouseRoomsTracker.DataAccess\GuestHouseRoomsTracker.DataAccess.csproj" />
+    <ProjectReference Include="..\GuestHouseRoomsTracker.Models\GuestHouseRoomsTracker.Models.csproj" />
+  </ItemGroup>
 
 </Project>

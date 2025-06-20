@@ -1,7 +1,60 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4789CFCF-30CD-4454-ACF8-9C5A6FB226DB}|GuestHouseRoomsTracker.Models\\GuestHouseRoomsTracker.Models.csproj|d:\\guesthouseroomstracker\\guesthouseroomstracker\\guesthouseroomstracker.models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4789CFCF-30CD-4454-ACF8-9C5A6FB226DB}|GuestHouseRoomsTracker.Models\\GuestHouseRoomsTracker.Models.csproj|solutionrelative:guesthouseroomstracker.models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4789CFCF-30CD-4454-ACF8-9C5A6FB226DB}|GuestHouseRoomsTracker.Models\\GuestHouseRoomsTracker.Models.csproj|d:\\guesthouseroomstracker\\guesthouseroomstracker\\guesthouseroomstracker.models\\entities\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4789CFCF-30CD-4454-ACF8-9C5A6FB226DB}|GuestHouseRoomsTracker.Models\\GuestHouseRoomsTracker.Models.csproj|solutionrelative:guesthouseroomstracker.models\\entities\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4789CFCF-30CD-4454-ACF8-9C5A6FB226DB}|GuestHouseRoomsTracker.Models\\GuestHouseRoomsTracker.Models.csproj|d:\\guesthouseroomstracker\\guesthouseroomstracker\\guesthouseroomstracker.models\\entities\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4789CFCF-30CD-4454-ACF8-9C5A6FB226DB}|GuestHouseRoomsTracker.Models\\GuestHouseRoomsTracker.Models.csproj|solutionrelative:guesthouseroomstracker.models\\entities\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FDF70F5-E070-4E96-9829-CBD365873654}|GuestHouseRoomsTracker.Common\\GuestHouseRoomsTracker.Common.csproj|d:\\guesthouseroomstracker\\guesthouseroomstracker\\guesthouseroomstracker.common\\errormessages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FDF70F5-E070-4E96-9829-CBD365873654}|GuestHouseRoomsTracker.Common\\GuestHouseRoomsTracker.Common.csproj|solutionrelative:guesthouseroomstracker.common\\errormessages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FDF70F5-E070-4E96-9829-CBD365873654}|GuestHouseRoomsTracker.Common\\GuestHouseRoomsTracker.Common.csproj|d:\\guesthouseroomstracker\\guesthouseroomstracker\\guesthouseroomstracker.common\\guesthouseroomstracker.common.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{8FDF70F5-E070-4E96-9829-CBD365873654}|GuestHouseRoomsTracker.Common\\GuestHouseRoomsTracker.Common.csproj|solutionrelative:guesthouseroomstracker.common\\guesthouseroomstracker.common.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D51037D-C4DB-4DAC-A964-F0147FF4734E}|GuestHouseRoomsTracker.Core\\GuestHouseRoomsTracker.Core.csproj|d:\\guesthouseroomstracker\\guesthouseroomstracker\\guesthouseroomstracker.core\\guesthouseroomstracker.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{6D51037D-C4DB-4DAC-A964-F0147FF4734E}|GuestHouseRoomsTracker.Core\\GuestHouseRoomsTracker.Core.csproj|solutionrelative:guesthouseroomstracker.core\\guesthouseroomstracker.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4789CFCF-30CD-4454-ACF8-9C5A6FB226DB}|GuestHouseRoomsTracker.Models\\GuestHouseRoomsTracker.Models.csproj|d:\\guesthouseroomstracker\\guesthouseroomstracker\\guesthouseroomstracker.models\\guesthouseroomstracker.models.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4789CFCF-30CD-4454-ACF8-9C5A6FB226DB}|GuestHouseRoomsTracker.Models\\GuestHouseRoomsTracker.Models.csproj|solutionrelative:guesthouseroomstracker.models\\guesthouseroomstracker.models.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{932C7D2D-64D7-400C-B87E-D27ECA0B5D43}|GuestHouseRoomsTracker\\GuestHouseRoomsTracker.csproj|d:\\guesthouseroomstracker\\guesthouseroomstracker\\guesthouseroomstracker\\guesthouseroomstracker.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{932C7D2D-64D7-400C-B87E-D27ECA0B5D43}|GuestHouseRoomsTracker\\GuestHouseRoomsTracker.csproj|solutionrelative:guesthouseroomstracker\\guesthouseroomstracker.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3AA0E76-32B5-4ECF-9F77-BB74D4992672}|GuestHouseRoomsTracker.DataAccess\\GuestHouseRoomsTracker.DataAccess.csproj|d:\\guesthouseroomstracker\\guesthouseroomstracker\\guesthouseroomstracker.dataaccess\\guesthouseroomstracker.dataaccess.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E3AA0E76-32B5-4ECF-9F77-BB74D4992672}|GuestHouseRoomsTracker.DataAccess\\GuestHouseRoomsTracker.DataAccess.csproj|solutionrelative:guesthouseroomstracker.dataaccess\\guesthouseroomstracker.dataaccess.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D51037D-C4DB-4DAC-A964-F0147FF4734E}|GuestHouseRoomsTracker.Core\\GuestHouseRoomsTracker.Core.csproj|d:\\guesthouseroomstracker\\guesthouseroomstracker\\guesthouseroomstracker.core\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D51037D-C4DB-4DAC-A964-F0147FF4734E}|GuestHouseRoomsTracker.Core\\GuestHouseRoomsTracker.Core.csproj|solutionrelative:guesthouseroomstracker.core\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E3AA0E76-32B5-4ECF-9F77-BB74D4992672}|GuestHouseRoomsTracker.DataAccess\\GuestHouseRoomsTracker.DataAccess.csproj|d:\\guesthouseroomstracker\\guesthouseroomstracker\\guesthouseroomstracker.dataaccess\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E3AA0E76-32B5-4ECF-9F77-BB74D4992672}|GuestHouseRoomsTracker.DataAccess\\GuestHouseRoomsTracker.DataAccess.csproj|solutionrelative:guesthouseroomstracker.dataaccess\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{932C7D2D-64D7-400C-B87E-D27ECA0B5D43}|GuestHouseRoomsTracker\\GuestHouseRoomsTracker.csproj|d:\\guesthouseroomstracker\\guesthouseroomstracker\\guesthouseroomstracker\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{932C7D2D-64D7-400C-B87E-D27ECA0B5D43}|GuestHouseRoomsTracker\\GuestHouseRoomsTracker.csproj|solutionrelative:guesthouseroomstracker\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{932C7D2D-64D7-400C-B87E-D27ECA0B5D43}|GuestHouseRoomsTracker\\GuestHouseRoomsTracker.csproj|d:\\guesthouseroomstracker\\guesthouseroomstracker\\guesthouseroomstracker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{932C7D2D-64D7-400C-B87E-D27ECA0B5D43}|GuestHouseRoomsTracker\\GuestHouseRoomsTracker.csproj|solutionrelative:guesthouseroomstracker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +62,180 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker.Models\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "GuestHouseRoomsTracker.Models\\Entities\\User.cs",
+              "ToolTip": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker.Models\\Entities\\User.cs",
+              "RelativeToolTip": "GuestHouseRoomsTracker.Models\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T16:26:03.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Reservation.cs",
+              "DocumentMoniker": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker.Models\\Entities\\Reservation.cs",
+              "RelativeDocumentMoniker": "GuestHouseRoomsTracker.Models\\Entities\\Reservation.cs",
+              "ToolTip": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker.Models\\Entities\\Reservation.cs",
+              "RelativeToolTip": "GuestHouseRoomsTracker.Models\\Entities\\Reservation.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAowB4AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T16:21:42.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Room.cs",
+              "DocumentMoniker": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker.Models\\Entities\\Room.cs",
+              "RelativeDocumentMoniker": "GuestHouseRoomsTracker.Models\\Entities\\Room.cs",
+              "ToolTip": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker.Models\\Entities\\Room.cs",
+              "RelativeToolTip": "GuestHouseRoomsTracker.Models\\Entities\\Room.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAwwBoAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T16:10:37.279Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GuestHouseRoomsTracker.Models",
+              "DocumentMoniker": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker.Models\\GuestHouseRoomsTracker.Models.csproj",
+              "RelativeDocumentMoniker": "GuestHouseRoomsTracker.Models\\GuestHouseRoomsTracker.Models.csproj",
+              "ToolTip": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker.Models\\GuestHouseRoomsTracker.Models.csproj",
+              "RelativeToolTip": "GuestHouseRoomsTracker.Models\\GuestHouseRoomsTracker.Models.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-19T16:03:39.26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GuestHouseRoomsTracker.Core",
+              "DocumentMoniker": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker.Core\\GuestHouseRoomsTracker.Core.csproj",
+              "RelativeDocumentMoniker": "GuestHouseRoomsTracker.Core\\GuestHouseRoomsTracker.Core.csproj",
+              "ToolTip": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker.Core\\GuestHouseRoomsTracker.Core.csproj",
+              "RelativeToolTip": "GuestHouseRoomsTracker.Core\\GuestHouseRoomsTracker.Core.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-19T16:03:26.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GuestHouseRoomsTracker.Common",
+              "DocumentMoniker": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker.Common\\GuestHouseRoomsTracker.Common.csproj",
+              "RelativeDocumentMoniker": "GuestHouseRoomsTracker.Common\\GuestHouseRoomsTracker.Common.csproj",
+              "ToolTip": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker.Common\\GuestHouseRoomsTracker.Common.csproj",
+              "RelativeToolTip": "GuestHouseRoomsTracker.Common\\GuestHouseRoomsTracker.Common.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-19T16:03:21.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ErrorMessages.cs",
+              "DocumentMoniker": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker.Common\\ErrorMessages.cs",
+              "RelativeDocumentMoniker": "GuestHouseRoomsTracker.Common\\ErrorMessages.cs",
+              "ToolTip": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker.Common\\ErrorMessages.cs",
+              "RelativeToolTip": "GuestHouseRoomsTracker.Common\\ErrorMessages.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T15:50:00.493Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GuestHouseRoomsTracker",
+              "DocumentMoniker": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker.csproj",
+              "RelativeDocumentMoniker": "GuestHouseRoomsTracker\\GuestHouseRoomsTracker.csproj",
+              "ToolTip": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker.csproj",
+              "RelativeToolTip": "GuestHouseRoomsTracker\\GuestHouseRoomsTracker.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-19T16:03:14.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GuestHouseRoomsTracker.DataAccess",
+              "DocumentMoniker": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker.DataAccess\\GuestHouseRoomsTracker.DataAccess.csproj",
+              "RelativeDocumentMoniker": "GuestHouseRoomsTracker.DataAccess\\GuestHouseRoomsTracker.DataAccess.csproj",
+              "ToolTip": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker.DataAccess\\GuestHouseRoomsTracker.DataAccess.csproj",
+              "RelativeToolTip": "GuestHouseRoomsTracker.DataAccess\\GuestHouseRoomsTracker.DataAccess.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-19T16:01:26.277Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker.Core\\Program.cs",
+              "RelativeDocumentMoniker": "GuestHouseRoomsTracker.Core\\Program.cs",
+              "ToolTip": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker.Core\\Program.cs",
+              "RelativeToolTip": "GuestHouseRoomsTracker.Core\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T15:36:14.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker.DataAccess\\Program.cs",
+              "RelativeDocumentMoniker": "GuestHouseRoomsTracker.DataAccess\\Program.cs",
+              "ToolTip": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker.DataAccess\\Program.cs",
+              "RelativeToolTip": "GuestHouseRoomsTracker.DataAccess\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T15:35:51.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\appsettings.json",
+              "RelativeDocumentMoniker": "GuestHouseRoomsTracker\\appsettings.json",
+              "ToolTip": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\appsettings.json",
+              "RelativeToolTip": "GuestHouseRoomsTracker\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-19T15:33:04.15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\Program.cs",
+              "RelativeDocumentMoniker": "GuestHouseRoomsTracker\\Program.cs",
+              "ToolTip": "D:\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\GuestHouseRoomsTracker\\Program.cs",
+              "RelativeToolTip": "GuestHouseRoomsTracker\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-19T15:33:02.374Z",
+              "EditorCaption": ""
             }
           ]
         },
