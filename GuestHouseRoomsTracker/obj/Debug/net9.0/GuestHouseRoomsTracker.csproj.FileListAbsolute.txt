@@ -1,0 +1,10 @@
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker\obj\Debug\net9.0\GuestHouseRoomsTracker.csproj.AssemblyReference.cache
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker\obj\Debug\net9.0\GuestHouseRoomsTracker.GeneratedMSBuildEditorConfig.editorconfig
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker\obj\Debug\net9.0\GuestHouseRoomsTracker.AssemblyInfoInputs.cache
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker\obj\Debug\net9.0\GuestHouseRoomsTracker.AssemblyInfo.cs
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker\obj\Debug\net9.0\GuestHouseRoomsTracker.csproj.CoreCompileInputs.cache
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker\obj\Debug\net9.0\GuestHouseRoomsTracker.MvcApplicationPartsAssemblyInfo.cache
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker\obj\Debug\net9.0\GuestHouseRoomsTracker.RazorAssemblyInfo.cache
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker\obj\Debug\net9.0\GuestHouseRoomsTracker.RazorAssemblyInfo.cs
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker\obj\Debug\net9.0\GuestHouseRoomsTracker.sourcelink.json
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker\obj\Debug\net9.0\GuestHouseRoomsTracker.MvcApplicationPartsAssemblyInfo.cs

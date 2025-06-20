@@ -1,0 +1,15 @@
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Common\bin\Debug\net9.0\GuestHouseRoomsTracker.Common.deps.json
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Common\bin\Debug\net9.0\GuestHouseRoomsTracker.Common.runtimeconfig.json
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Common\bin\Debug\net9.0\GuestHouseRoomsTracker.Common.dll
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Common\bin\Debug\net9.0\GuestHouseRoomsTracker.Common.pdb
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Common\obj\Debug\net9.0\GuestHouseRoomsTracker.Common.csproj.AssemblyReference.cache
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Common\obj\Debug\net9.0\GuestHouseRoomsTracker.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Common\obj\Debug\net9.0\GuestHouseRoomsTracker.Common.AssemblyInfoInputs.cache
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Common\obj\Debug\net9.0\GuestHouseRoomsTracker.Common.AssemblyInfo.cs
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Common\obj\Debug\net9.0\GuestHouseRoomsTracker.Common.csproj.CoreCompileInputs.cache
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Common\obj\Debug\net9.0\GuestHouseRoomsTracker.Common.sourcelink.json
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Common\obj\Debug\net9.0\GuestHouseRoomsTracker.Common.dll
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Common\obj\Debug\net9.0\refint\GuestHouseRoomsTracker.Common.dll
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Common\obj\Debug\net9.0\GuestHouseRoomsTracker.Common.pdb
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Common\obj\Debug\net9.0\GuestHouseRoomsTracker.Common.genruntimeconfig.cache
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Common\obj\Debug\net9.0\ref\GuestHouseRoomsTracker.Common.dll

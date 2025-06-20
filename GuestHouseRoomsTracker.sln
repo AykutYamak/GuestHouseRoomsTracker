@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuestHouseRoomsTracker.Mode
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuestHouseRoomsTracker.Common", "GuestHouseRoomsTracker.Common\GuestHouseRoomsTracker.Common.csproj", "{8FDF70F5-E070-4E96-9829-CBD365873654}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuestHouseRoomsTracker.Utility", "GuestHouseRoomsTracker.Utility\GuestHouseRoomsTracker.Utility.csproj", "{79F93CBC-4E4F-4F98-87FF-39483D909472}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{8FDF70F5-E070-4E96-9829-CBD365873654}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FDF70F5-E070-4E96-9829-CBD365873654}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FDF70F5-E070-4E96-9829-CBD365873654}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79F93CBC-4E4F-4F98-87FF-39483D909472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79F93CBC-4E4F-4F98-87FF-39483D909472}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79F93CBC-4E4F-4F98-87FF-39483D909472}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79F93CBC-4E4F-4F98-87FF-39483D909472}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

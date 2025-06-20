@@ -1,0 +1,13 @@
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Utility\obj\Debug\net9.0\GuestHouseRoomsTracker.Utility.csproj.AssemblyReference.cache
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Utility\obj\Debug\net9.0\GuestHouseRoomsTracker.Utility.GeneratedMSBuildEditorConfig.editorconfig
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Utility\obj\Debug\net9.0\GuestHouseRoomsTracker.Utility.AssemblyInfoInputs.cache
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Utility\obj\Debug\net9.0\GuestHouseRoomsTracker.Utility.AssemblyInfo.cs
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Utility\obj\Debug\net9.0\GuestHouseRoomsTracker.Utility.csproj.CoreCompileInputs.cache
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Utility\obj\Debug\net9.0\GuestHouseRoomsTracker.Utility.sourcelink.json
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Utility\bin\Debug\net9.0\GuestHouseRoomsTracker.Utility.deps.json
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Utility\bin\Debug\net9.0\GuestHouseRoomsTracker.Utility.dll
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Utility\bin\Debug\net9.0\GuestHouseRoomsTracker.Utility.pdb
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Utility\obj\Debug\net9.0\GuestHouseRoomsTracker.Utility.dll
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Utility\obj\Debug\net9.0\refint\GuestHouseRoomsTracker.Utility.dll
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Utility\obj\Debug\net9.0\GuestHouseRoomsTracker.Utility.pdb
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker.Utility\obj\Debug\net9.0\ref\GuestHouseRoomsTracker.Utility.dll
