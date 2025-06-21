@@ -1,5 +1,12 @@
 using Microsoft.EntityFrameworkCore;
-
+using GuestHouseRoomsTracker.DataAccess;
+using GuestHouseRoomsTracker.Models.Entities;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using GuestHouseRoomsTracker.Areas.Identity.Pages.Account.Manage;
+using DNBarbershop.DataAccess;
+using DNBarbershop.Utility;
 internal class Program
 {
     private static async Task Main(string[] args)
@@ -9,8 +16,25 @@ internal class Program
         // Add services to the container.
         builder.Services.AddControllersWithViews();
         var connection = builder.Configuration.GetConnectionString("DefaultConnection");
+        builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("DNBarbershop.DataAccess")).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
+
+        builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+        builder.Services.AddScoped<IEmailSender, EmailSender>();
+        builder.Services.AddRazorPages();
+
+        builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
+        {
+            options.LoginPath = "/Account/Login";
+            options.AccessDeniedPath = "/Account/AccessDenied";
+        });
 
         var app = builder.Build();
+
+        using (var scope = app.Services.CreateScope())
+        {
+            var serviceProvider = scope.ServiceProvider;
+            await RoleSeeder.Initialize(serviceProvider);
+        }
 
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
@@ -21,11 +45,18 @@ internal class Program
         }
 
         app.UseHttpsRedirection();
-        app.UseStaticFiles();
 
         app.UseRouting();
-
+        
+        app.UseAuthentication();
+        
         app.UseAuthorization();
+        
+        app.MapRazorPages();
+        
+        app.UseStaticFiles();
+        
+        app.MapStaticAssets();
 
         app.MapControllerRoute(
             name: "default",

@@ -26,7 +26,7 @@ namespace GuestHouseRoomsTracker.Models.Entities
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         
         [ForeignKey(nameof(Room))]
-        public int RoomId { get; set; }
+        public Guid RoomId { get; set; }
 
         public Room Room { get; set; }
     }
