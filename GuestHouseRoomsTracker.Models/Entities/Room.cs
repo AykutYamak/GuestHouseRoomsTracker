@@ -16,8 +16,8 @@ namespace GuestHouseRoomsTracker.Models.Entities
         [StringLength(20, ErrorMessage = nameof(GuestHouseRoomsTracker.Common.ErrorMessages.MaxLengthExceededErrorMessage))]
         public string RoomNumber { get; set; }
         [Required(ErrorMessage = GuestHouseRoomsTracker.Common.ErrorMessages.RequiredErrorMessage)]
-        [StringLength(50, ErrorMessage = nameof(GuestHouseRoomsTracker.Common.ErrorMessages.MaxLengthExceededErrorMessage))]
-        public string Type { get; set; }
+        [StringLength(500, ErrorMessage = nameof(GuestHouseRoomsTracker.Common.ErrorMessages.MaxLengthExceededErrorMessage))]
+        public string Description { get; set; }
         [Required(ErrorMessage = GuestHouseRoomsTracker.Common.ErrorMessages.RequiredErrorMessage)]
         [Range(1, 4, ErrorMessage = GuestHouseRoomsTracker.Common.ErrorMessages.MustBeWholeNumberErrorMessage)]
         public int Capacity { get; set; }

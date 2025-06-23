@@ -1,0 +1,21 @@
+﻿@model GuestHouseRoomsTracker.Models.Room.RoomAvailabilityViewModel
+
+<h2>Свободни стаи</h2>
+<p>Период: @Model.CheckInDate.ToShortDateString() - @Model.CheckOutDate.ToShortDateString()</p>
+
+@if (!Model.AvailableRooms.Any())
+{
+    <p>Няма налични стаи за този период.</p>
+}
+else
+{
+    <ul>
+        @foreach (var room in Model.AvailableRooms)
+        {
+            <li>
+                <strong>@room.RoomNumber</strong> – Цена: @room.Description лв, Капацитет: @room.Capacity
+                <a asp-action="Details" asp-route-id="@room.Id">Детайли</a>
+            </li>
+        }
+    </ul>
+}
