@@ -1,4 +1,4 @@
-﻿namespace DNBarbershop.Utility
+﻿namespace GuestHouseRoomsTracker.Utility
 {
     public static class SD
     {

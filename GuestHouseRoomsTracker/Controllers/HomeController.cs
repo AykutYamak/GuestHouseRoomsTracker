@@ -1,7 +1,6 @@
 using System.Diagnostics;
 using GuestHouseRoomsTracker.Models;
 using Microsoft.AspNetCore.Mvc;
-
 namespace GuestHouseRoomsTracker.Controllers
 {
     public class HomeController : Controller

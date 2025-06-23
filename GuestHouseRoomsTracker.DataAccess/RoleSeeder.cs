@@ -9,7 +9,7 @@ using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DNBarbershop.DataAccess
+namespace GuestHouseRoomsTracker.DataAccess
 {
     public static class RoleSeeder
     {

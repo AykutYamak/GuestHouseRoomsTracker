@@ -5,8 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using GuestHouseRoomsTracker.Areas.Identity.Pages.Account.Manage;
-using DNBarbershop.DataAccess;
-using DNBarbershop.Utility;
+using GuestHouseRoomsTracker.Utility;
 internal class Program
 {
     private static async Task Main(string[] args)
@@ -16,11 +15,13 @@ internal class Program
         // Add services to the container.
         builder.Services.AddControllersWithViews();
         var connection = builder.Configuration.GetConnectionString("DefaultConnection");
-        builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("DNBarbershop.DataAccess")).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
-
-        builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
-        builder.Services.AddScoped<IEmailSender, EmailSender>();
+        builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("GuestHouseRoomsTracker.DataAccess")).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
+ 
         builder.Services.AddRazorPages();
+
+        builder.Services.AddIdentity<User, IdentityRole>()
+               .AddEntityFrameworkStores<ApplicationDbContext>()
+               .AddDefaultTokenProviders(); builder.Services.AddScoped<IEmailSender, EmailSender>();
 
         builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
         {
