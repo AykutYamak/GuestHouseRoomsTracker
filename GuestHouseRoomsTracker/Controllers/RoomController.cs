@@ -168,7 +168,6 @@ namespace GuestHouseRoomsTracker.Controllers
                 TempData["error"] = "Стаята не е намерена.";
                 return NotFound();
             }
-
             return View(room);
         }
         [Authorize(Roles = "Admin")]

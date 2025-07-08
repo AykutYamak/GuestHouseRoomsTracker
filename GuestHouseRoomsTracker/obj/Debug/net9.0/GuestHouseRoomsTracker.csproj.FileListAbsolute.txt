@@ -443,3 +443,5 @@ D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker\obj\Debu
 D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker\obj\Debug\net9.0\ref\GuestHouseRoomsTracker.dll
 D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker\bin\Debug\net9.0\GuestHouseRoomsTracker.Utility.dll
 D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker\bin\Debug\net9.0\GuestHouseRoomsTracker.Utility.pdb
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker\obj\Debug\net9.0\compressed\l5wqvfa6fe-hm9pva7r5x.gz
+D:\GuestHouseRoomsTracker\GuestHouseRoomsTracker\GuestHouseRoomsTracker\obj\Debug\net9.0\compressed\4af5khnyoh-t1luftei2g.gz

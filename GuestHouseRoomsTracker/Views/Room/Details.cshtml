@@ -1,0 +1,60 @@
+﻿@model GuestHouseRoomsTracker.Models.Entities.Room;
+@{
+    ViewData["Title"] = "Детайли за стая";
+}
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-white border-0 py-3">
+                    <div class="d-flex align-items-center">
+                        <a href="@Url.Action("Index")" class="btn btn-outline-secondary btn-sm me-3">
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                        <h4 class="mb-0 text-dark fw-semibold">Детайли за стая</h4>
+                    </div>
+                </div>
+                <div class="card-body p-4">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="info-item mb-4">
+                                <label class="form-label fw-semibold text-muted">Номер на стая</label>
+                                <p class="h5 mb-0">@Model.RoomNumber</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-item mb-4">
+                                <label class="form-label fw-semibold text-muted">Капацитет</label>
+                                <p class="h5 mb-0">@Model.Capacity места</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-item mb-4">
+                        <label class="form-label fw-semibold text-muted">Описание</label>
+                        <p class="mb-0">@Model.Description</p>
+                    </div>
+
+                    <div class="info-item mb-4">
+                        <label class="form-label fw-semibold text-muted">Статус</label>
+                        <span class="badge bg-success-soft text-success rounded-pill px-3 py-2">
+                            Активна
+                        </span>
+                    </div>
+
+                    <div class="d-flex gap-2 mt-4">
+                        <a href="@Url.Action("Edit", new { id = Model.Id })"
+                           class="btn btn-primary btn-lg px-4 rounded-pill">
+                            <i class="fas fa-edit me-2"></i>Редактирай
+                        </a>
+                        <a href="@Url.Action("Index")"
+                           class="btn btn-outline-secondary btn-lg px-4 rounded-pill">
+                            Назад
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

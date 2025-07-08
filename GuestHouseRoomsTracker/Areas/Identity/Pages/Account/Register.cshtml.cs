@@ -81,8 +81,10 @@ namespace GuestHouseRoomsTracker.Areas.Identity.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
-            [EmailAddress]
+            [Required(ErrorMessage = "Email is required.")]
+            [EmailAddress(ErrorMessage = "Невалиден e-mail формат.")]
+            [RegularExpression(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$",
+            ErrorMessage = "Your email should contain valid domain and one dot, as well as the symbol '@'!")]
             [Display(Name = "Email")]
             public string Email { get; set; }
 
@@ -90,7 +92,7 @@ namespace GuestHouseRoomsTracker.Areas.Identity.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
+            [Required(ErrorMessage = "This field is required.")]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
@@ -100,9 +102,10 @@ namespace GuestHouseRoomsTracker.Areas.Identity.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
+            [Required(ErrorMessage = "This field is required.")]
             [DataType(DataType.Password)]
             [Display(Name = "Confirm password")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Compare("Password", ErrorMessage = "The confirm password didn't match.")]
             public string ConfirmPassword { get; set; }
 
             public string Role { get; set; }
@@ -116,6 +119,11 @@ namespace GuestHouseRoomsTracker.Areas.Identity.Pages.Account
             if (!await _roleManager.RoleExistsAsync(SD.AdminRole))
             {
                 await _roleManager.CreateAsync(new IdentityRole(SD.AdminRole));
+            }
+
+            if (!await _roleManager.RoleExistsAsync(SD.UserRole))
+            {
+                await _roleManager.CreateAsync(new IdentityRole(SD.UserRole));
             }
             var roles = _roleManager.Roles.Select(y => y.Name).ToList();
             Input = new InputModel
@@ -135,6 +143,12 @@ namespace GuestHouseRoomsTracker.Areas.Identity.Pages.Account
         {
             returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+            var existingUser = await _userManager.FindByEmailAsync(Input.Email);
+            if (existingUser != null)
+            {
+                ModelState.AddModelError("Input.Email", "This email address is already registered.");
+                return Page();
+            }
             if (ModelState.IsValid)
             {
                 var user = CreateUser();
@@ -149,11 +163,11 @@ namespace GuestHouseRoomsTracker.Areas.Identity.Pages.Account
 
                     if(!string.IsNullOrEmpty(Input.Role))
                     {
-                        await _userManager.AddToRoleAsync(user, SD.AdminRole);
+                        await _userManager.AddToRoleAsync(user, SD.UserRole);
                     }
                     else
                     {
-                        await _userManager.AddToRoleAsync(user, SD.AdminRole);
+                        await _userManager.AddToRoleAsync(user, SD.UserRole);
                     }
 
                     var userId = await _userManager.GetUserIdAsync(user);

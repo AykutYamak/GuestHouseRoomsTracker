@@ -1,5 +1,135 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Управление на стаи";
 }
+
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-white border-0 py-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="mb-0 text-dark fw-semibold">Управление на стаи</h4>
+                        <a href="@Url.Action("Add")" class="btn btn-primary btn-sm px-4 py-2 rounded-pill">
+                            <i class="fas fa-plus me-2"></i>Добави стая
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body p-0">
+                    @if (Model.Rooms.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th class="border-0 fw-semibold text-muted">Номер</th>
+                                        <th class="border-0 fw-semibold text-muted">Капацитет</th>
+                                        <th class="border-0 fw-semibold text-muted">Описание</th>
+                                        <th class="border-0 fw-semibold text-muted">Статус</th>
+                                        <th class="border-0 fw-semibold text-muted text-center">Действия</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var room in Model.Rooms)
+                                    {
+                                        <tr class="room-row">
+                                            <td class="align-middle fw-medium">@room.RoomNumber</td>
+                                            <td class="align-middle">@room.Capacity</td>
+                                            <td class="align-middle">
+                                                <span class="text-truncate d-inline-block" style="max-width: 200px;">
+                                                    @room.Description
+                                                </span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <span class="badge bg-success-soft text-success rounded-pill px-3 py-2">
+                                                    Активна
+                                                </span>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <div class="btn-group" role="group">
+                                                    <a href="@Url.Action("Details", new { id = room.Id })"
+                                                       class="btn btn-outline-info btn-sm">
+                                                        <i class="fas fa-eye"></i>
+                                                    </a>
+                                                    <a href="@Url.Action("Edit", new { id = room.Id })"
+                                                       class="btn btn-outline-primary btn-sm">
+                                                        <i class="fas fa-edit"></i>
+                                                    </a>
+                                                    <button type="button" class="btn btn-outline-danger btn-sm"
+                                                            onclick="confirmDelete('@room.Id')">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="text-center py-5">
+                            <i class="fas fa-bed fa-3x text-muted mb-3"></i>
+                            <h5 class="text-muted">Няма намерени стаи</h5>
+                            <p class="text-muted">Започнете като добавите първата стая.</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+            <div class="modal-header border-0 pb-0">
+                <h5 class="modal-title text-danger">
+                    <i class="fas fa-exclamation-triangle me-2"></i>Потвърждение
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body py-4">
+                <p class="mb-0">Сигурни ли сте, че искате да изтриете тази стая?</p>
+            </div>
+            <div class="modal-footer border-0 pt-0">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Отказ</button>
+                <form id="deleteForm" method="post" class="d-inline">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-danger">Изтрий</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .bg-success-soft {
+        background-color: #d4edda !important;
+    }
+
+    .room-row {
+        transition: all 0.2s ease;
+    }
+
+        .room-row:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-1px);
+        }
+
+    .card {
+        border-radius: 12px;
+    }
+
+    .btn-group .btn {
+        border-radius: 6px !important;
+        margin: 0 1px;
+    }
+</style>
+
+<script>
+    function confirmDelete(roomId) {
+        document.getElementById('deleteForm').action = '@Url.Action("Delete")' + '/' + roomId;
+        new bootstrap.Modal(document.getElementById('deleteModal')).show();
+    }
+</script>

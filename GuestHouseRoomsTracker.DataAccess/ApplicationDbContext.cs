@@ -13,18 +13,18 @@ namespace GuestHouseRoomsTracker.DataAccess
     {
         private bool seedDb;
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
-        //public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, bool seedDb = true) : base(options)
-        //{
-        //    if (this.Database.IsRelational())
-        //    {
-        //        this.Database.Migrate();
-        //    }
-        //    else
-        //    {
-        //        this.Database.EnsureCreated();
-        //    }
-        //    this.seedDb = seedDb;
-        //}
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, bool seedDb = true) : base(options)
+        {
+            if (this.Database.IsRelational())
+            {
+                this.Database.Migrate();
+            }
+            else
+            {
+                this.Database.EnsureCreated();
+            }
+            this.seedDb = seedDb;
+        }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Reservation> Reservations { get; set; }    
         public override DbSet<User> Users { get; set; }
