@@ -29,5 +29,7 @@ namespace GuestHouseRoomsTracker.Models.Entities
         public Guid RoomId { get; set; }
 
         public Room Room { get; set; }
+
+        public ICollection<Room> Rooms { get; set; } = new HashSet<Room>();
     }
 }

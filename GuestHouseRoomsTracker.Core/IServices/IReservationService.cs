@@ -9,6 +9,8 @@ namespace GuestHouseRoomsTracker.Core.IServices
 {
     public interface IReservationService : IGlobalService<Reservation>
     {
-
+        Task<IEnumerable<Reservation>> GetAllReservationsAsync();
+        Task CreateReservationAsync(Reservation model);
+        Task<IEnumerable<Room>> GetRoomsByIdsAsync(IEnumerable<Guid> roomIds);
     }
 }

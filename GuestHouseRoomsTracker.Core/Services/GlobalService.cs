@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace GuestHouseRoomsTracker.Core.Services
 {
-    internal class GlobalService<T> : IGlobalService<T> where T : class
+    public class GlobalService<T> : IGlobalService<T> where T : class
     {
         private readonly IRepository<T> _repository;
         public GlobalService(IRepository<T> repository)

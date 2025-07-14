@@ -81,12 +81,17 @@ namespace GuestHouseRoomsTracker.DataAccess.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
+                    b.Property<Guid?>("ReservationId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("RoomNumber")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ReservationId");
 
                     b.ToTable("Rooms");
                 });
@@ -304,6 +309,13 @@ namespace GuestHouseRoomsTracker.DataAccess.Migrations
                     b.Navigation("Room");
                 });
 
+            modelBuilder.Entity("GuestHouseRoomsTracker.Models.Entities.Room", b =>
+                {
+                    b.HasOne("GuestHouseRoomsTracker.Models.Entities.Reservation", null)
+                        .WithMany("Rooms")
+                        .HasForeignKey("ReservationId");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -353,6 +365,11 @@ namespace GuestHouseRoomsTracker.DataAccess.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("GuestHouseRoomsTracker.Models.Entities.Reservation", b =>
+                {
+                    b.Navigation("Rooms");
                 });
 
             modelBuilder.Entity("GuestHouseRoomsTracker.Models.Entities.Room", b =>

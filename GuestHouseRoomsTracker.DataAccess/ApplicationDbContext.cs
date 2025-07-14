@@ -30,8 +30,7 @@ namespace GuestHouseRoomsTracker.DataAccess
         public override DbSet<User> Users { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-
+            base.OnModelCreating(modelBuilder); 
             modelBuilder.Entity<Reservation>()
                 .HasOne(r => r.Room)
                 .WithMany(rm => rm.Reservations)

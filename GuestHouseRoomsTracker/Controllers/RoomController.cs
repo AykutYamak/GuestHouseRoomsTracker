@@ -9,12 +9,10 @@ namespace GuestHouseRoomsTracker.Controllers
     public class RoomController : Controller
     {
         private readonly IRoomService _roomService;
-        private readonly IReservationService _reservationService;
 
-        public RoomController(IRoomService roomService, IReservationService reservationService)
+        public RoomController(IRoomService roomService)
         {
             _roomService = roomService;
-            _reservationService = reservationService;
         }
 
         [Authorize(Roles = "Admin")]
@@ -28,7 +26,8 @@ namespace GuestHouseRoomsTracker.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult Add()
         {
-            return View(new RoomCreateViewModel());
+            var model = new RoomCreateViewModel();
+            return View(model);
         }
 
         [Authorize(Roles = "Admin")]
@@ -39,14 +38,14 @@ namespace GuestHouseRoomsTracker.Controllers
             if (!ModelState.IsValid)
             {
                 TempData["error"] = "Невалидни данни!";
-                return RedirectToAction("Add", "RoomController");
+                return RedirectToAction("Add", "Room");
             }
 
             var exists = _roomService.GetAll().Any(r => r.RoomNumber == model.RoomNumber);
             if (exists)
             {
                 TempData["error"] = "Стая с този номер вече съществува.";
-                return RedirectToAction("Add","RoomController");
+                return RedirectToAction("Add","Room");
             }
 
             var room = new Room
@@ -69,7 +68,7 @@ namespace GuestHouseRoomsTracker.Controllers
             if (room == null)
             {
                 TempData["error"] = "Стаята не е намерена.";
-                return NotFound();
+                return RedirectToAction("Index","Room");
             }
 
             var model = new RoomEditViewModel
@@ -77,7 +76,8 @@ namespace GuestHouseRoomsTracker.Controllers
                 Id = room.Id,
                 RoomNumber = room.RoomNumber,
                 Capacity = room.Capacity,
-                Description = room.Description
+                Description = room.Description,
+                IsActive = room.IsActive
             };
 
             return View(model);
@@ -91,22 +91,23 @@ namespace GuestHouseRoomsTracker.Controllers
             if (!ModelState.IsValid)
             {
                 TempData["error"] = "Невалидни данни!";
-                return RedirectToAction("Edit", "RoomController");
+                return RedirectToAction("Edit", "Room");
             }
 
-            var duplicate = await _roomService.Get(r => r.RoomNumber == model.RoomNumber && r.Id != model.Id);
-            if (duplicate != null)
-            {
-                TempData["error"] = "Стая с този номер вече съществува.";
-                return RedirectToAction("Edit", "RoomController");
-            }
+            //var duplicate = await _roomService.Get(r => r.RoomNumber == model.RoomNumber && r.Id != model.Id);
+            //if (duplicate != null)
+            //{
+            //    TempData["error"] = "Стая с този номер вече съществува.";
+            //    return RedirectToAction("Edit", "Room");
+            //}
 
             var room = new Room
             {
                 Id = model.Id,
                 RoomNumber = model.RoomNumber,
                 Capacity = model.Capacity,
-                Description = model.Description
+                Description = model.Description,
+                IsActive = model.IsActive
             };
 
             await _roomService.Update(room);
@@ -139,58 +140,6 @@ namespace GuestHouseRoomsTracker.Controllers
             return RedirectToAction("Index");
         }
 
-        [Authorize(Roles = "Admin")]
-        public IActionResult RoomList(RoomFilterViewModel? filter)
-        {
-            var rooms = _roomService.GetAll().AsQueryable();
-
-            if (filter != null)
-            {
-
-                if (filter.Capacity.HasValue && filter.Capacity.Value > 0)
-                    rooms = rooms.Where(r => r.Capacity >= filter.Capacity.Value);
-            }
-
-            var model = new RoomFilterViewModel
-            {
-                Capacity = filter?.Capacity,
-                Rooms = rooms.ToList()
-            };
-
-            return View(model);
-        }
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Details(Guid id)
-        {
-            var room = await _roomService.Get(r => r.Id == id);
-            if (room == null)
-            {
-                TempData["error"] = "Стаята не е намерена.";
-                return NotFound();
-            }
-            return View(room);
-        }
-        [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> SearchAvailableRooms(DateTime? checkIn, DateTime? checkOut)
-        {
-            if (checkIn == null || checkOut == null || checkIn >= checkOut)
-            {
-                TempData["error"] = "Невалидни дати за търсене.";
-                return RedirectToAction("Index");
-            }
-
-            var availableRoomIds = await _roomService.GetAvailableRoomIdsAsync(checkIn.Value, checkOut.Value);
-            var availableRooms = (await _roomService.Find(x => availableRoomIds.Contains(x.Id)));
-
-            var model = new RoomAvailabilityViewModel
-            {
-                CheckInDate = checkIn.Value,
-                CheckOutDate = checkOut.Value,
-                AvailableRooms = availableRooms
-            };
-
-            return View("AvailableRooms", model); 
-        }
     }
 }
 

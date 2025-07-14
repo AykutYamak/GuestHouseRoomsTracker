@@ -1,5 +1,128 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model GuestHouseRoomsTracker.Models.Reservations.ReservationEditViewModel
+
 @{
+    ViewData["Title"] = "Редактирай резервация";
 }
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/roomAdd.css" />
+</head>
+<body>
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!-- Header Banner -->
+                <div class="header-banner">
+                    <div class="header-content">
+                        <h1 class="header-title">
+                            <i class="fas fa-edit me-3"></i>Редактирай резервация
+                        </h1>
+                        <p class="header-subtitle">Променете информацията за съществуваща резервация</p>
+                    </div>
+                </div>
+
+                <!-- Main Card -->
+                <div class="main-card">
+                    <div class="card-header-custom">
+                        <div class="breadcrumb-nav">
+                            <h2 class="page-title">Детайли за резервацията</h2>
+                            <a asp-action="Index" asp-controller="Reservation" class="btn-back">
+                                <i class="fas fa-arrow-left me-2"></i>Назад към резервациите
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Form Container -->
+                    <div class="form-container">
+                        <form method="post">
+                            @Html.AntiForgeryToken()
+                            @Html.HiddenFor(m => m.Id)
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label asp-for="GuestName" class="form-label">
+                                            <i class="fas fa-user me-2"></i>Име на гост
+                                        </label>
+                                        <div class="input-group-custom">
+                                            <input asp-for="GuestName" class="form-control form-control-lg" />
+                                        </div>
+                                        <span asp-validation-for="GuestName" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label asp-for="PhoneNumber" class="form-label">
+                                            <i class="fas fa-phone me-2"></i>Телефон
+                                        </label>
+                                        <div class="input-group-custom">
+                                            <input asp-for="PhoneNumber" class="form-control form-control-lg" />
+                                        </div>
+                                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-2">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label asp-for="CheckInDate" class="form-label">
+                                            <i class="fas fa-calendar-check me-2"></i>Дата на настаняване
+                                        </label>
+                                        <div class="input-group-custom">
+                                            <input asp-for="CheckInDate" type="date" class="form-control form-control-lg" />
+                                        </div>
+                                        <span asp-validation-for="CheckInDate" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label asp-for="CheckOutDate" class="form-label">
+                                            <i class="fas fa-calendar-times me-2"></i>Дата на напускане
+                                        </label>
+                                        <div class="input-group-custom">
+                                            <input asp-for="CheckOutDate" type="date" class="form-control form-control-lg" />
+                                        </div>
+                                        <span asp-validation-for="CheckOutDate" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group mt-2">
+                                <label asp-for="RoomId" class="form-label">
+                                    <i class="fas fa-door-closed me-2"></i>Изберете стая
+                                </label>
+                                <select asp-for="RoomId" asp-items="Model.Rooms" class="form-select form-select-lg">
+                                    <option value="">-- Изберете стая --</option>
+                                </select>
+                                <span asp-validation-for="RoomId" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group mt-2">
+                                <label asp-for="Notes" class="form-label">
+                                    <i class="fas fa-sticky-note me-2"></i>Бележки
+                                </label>
+                                <textarea asp-for="Notes" class="form-control" rows="3"
+                                          placeholder="Допълнителни изисквания, коментари или бележки от госта..."></textarea>
+                                <span asp-validation-for="Notes" class="text-danger"></span>
+                            </div>
+
+                            <div class="button-group mt-4">
+                                <button type="submit" asp-action="Edit" asp-controller="Reservation" class="btn-primary-custom">
+                                    Запази промените
+                                </button>
+                                <a asp-action="Index" asp-controller="Reservation" class="btn-secondary-custom">
+                                    Отказ
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

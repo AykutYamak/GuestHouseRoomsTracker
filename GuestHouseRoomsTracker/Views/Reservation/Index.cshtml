@@ -1,5 +1,104 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model GuestHouseRoomsTracker.Models.Reservations.ReservationFilterViewModel
 @{
+    ViewData["Title"] = "Управление на резервации";
 }
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/roomIndex.css" />
+</head>
+<body>
+    <div class="container-fluid py-4" style="background: linear-gradient(135deg, #f5f1eb 0%, #e8ddd4 100%); min-height: 100vh;">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xl-10">
+                <!-- Header Section -->
+                <div class="text-center mb-5">
+                    <div class="header-banner">
+                        <div class="header-content">
+                            <h1 class="header-title">
+                                Управление на резервации
+                            </h1>
+                            <p class="header-subtitle">Преглед и филтриране на резервации</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filter Card -->
+                <div class="main-card mb-4">
+                    <div class="card-header-custom">
+                        <h4 class="mb-0 text-dark fw-bold">Филтриране по дати</h4>
+                    </div>
+                    <div class="card-body">
+                        <form asp-action="Index" method="post">
+                            @Html.AntiForgeryToken()
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label asp-for="CheckInDate" class="form-label">Дата на настаняване до:</label>
+                                    <input type="date" asp-for="CheckInDate" class="form-control" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="CheckOutDate" class="form-label">Дата на напускане от:</label>
+                                    <input type="date" asp-for="CheckOutDate" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <button type="submit" class="btn btn-add-room">Приложи филтрите</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Table Card -->
+                <div class="main-card">
+                    <div class="card-header-custom">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="mb-0 text-dark fw-bold">Списък с резервации</h4>
+                            <a class="btn btn-add-room" asp-controller="Reservation" asp-action="Add">
+                                Създай резервация
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        @if (Model.Reservations.Any())
+                        {
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-0 custom-table">
+                                    <thead class="table-header">
+                                        <tr>
+                                            <th class="border-0 fw-semibold">Гост</th>
+                                            <th class="border-0 fw-semibold">Телефон</th>
+                                            <th class="border-0 fw-semibold">Стая</th>
+                                            <th class="border-0 fw-semibold">Настаняване</th>
+                                            <th class="border-0 fw-semibold">Напускане</th>
+                                            <th class="border-0 fw-semibold">Бележки</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var r in Model.Reservations)
+                                        {
+                                            <tr class="room-row">
+                                                <td class="align-middle">@r.GuestName</td>
+                                                <td class="align-middle">@r.PhoneNumber</td>
+                                                <td class="align-middle">@r.Room?.RoomNumber</td>
+                                                <td class="align-middle">@r.CheckInDate.Day.ToString()/@r.CheckInDate.Month.ToString()/@r.CheckInDate.Year.ToString()</td>
+                                                <td class="align-middle">@r.CheckOutDate.Day.ToString()/@r.CheckOutDate.Month.ToString()/@r.CheckOutDate.Year.ToString()</td>
+                                                <td class="align-middle">@r.Notes</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="empty-state">   
+                                <h5 class="empty-title">Няма намерени резервации</h5>
+                                <p class="empty-subtitle">Няма съвпадения с избраните филтри.</p>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,7 +1,8 @@
 ﻿@using GuestHouseRoomsTracker.Models.Entities
 @using Microsoft.AspNetCore.Identity
-@inject UserManager<User> UserManager
-@inject SignInManager<User> SignInManager
+﻿@using GuestHouseRoomsTracker.Utility
+@* @inject UserManager<User> UserManager *@
+@* @inject SignInManager<User> SignInManager *@
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - GuestHouseRoomsTracker</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/GuestHouseRoomsTracker.styles.css" asp-append-version="true" />
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -30,29 +32,24 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-
-                        <!-- Room Dropdown -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark" href="#" id="roomDropdown" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
-                                Room
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="roomDropdown">
-                                <li><a class="dropdown-item" asp-controller="Room" asp-action="Add">Add</a></li>
-                                <li><a class="dropdown-item" asp-controller="Room" asp-action="Edit">Edit</a></li>
-                                <li><a class="dropdown-item" asp-controller="Room" asp-action="AvailableRooms">Available Rooms</a></li>
-                                <li><a class="dropdown-item" asp-controller="Room" asp-action="Index">View All</a></li>
-                            </ul>
-                        </li>
+                        @if (User.IsInRole(SD.AdminRole))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Room" asp-action="Index">Rooms</a>
+                            </li>
+                            <li>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Reservation" asp-action="Index">Reservations</a>
+                            </li>
+                        }
                     </ul>
 
-                    <!-- Login/Logout -->
                     <partial name="_LoginPartial" />
+                    <partial name="_Notification" />
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div>
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

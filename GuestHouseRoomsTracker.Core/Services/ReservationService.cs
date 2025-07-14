@@ -1,6 +1,7 @@
 ﻿using GuestHouseRoomsTracker.Core.IServices;
 using GuestHouseRoomsTracker.DataAccess.Repository;
 using GuestHouseRoomsTracker.Models.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace GuestHouseRoomsTracker.Core.Services
 {
-    internal class ReservationService : IReservationService
+    public class ReservationService : IReservationService
     {
         private readonly IRepository<Reservation> _resRepo;
         public ReservationService(IRepository<Reservation> repository)
@@ -114,6 +115,37 @@ namespace GuestHouseRoomsTracker.Core.Services
             }
 
             await _resRepo.Update(entity);
+        }
+        public async Task<IEnumerable<Reservation>> GetAllReservationsAsync()
+        {
+            return await _resRepo.GetAll()
+                .Include(r => r.Room)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Room>> GetRoomsByIdsAsync(IEnumerable<Guid> roomIds)
+        {
+            List<Room> rooms = new List<Room>();
+            rooms = await _resRepo
+                  .GetAll()
+                  .Where(r => roomIds.Contains(r.Id))
+                  .Select(r => r.Room)
+                  .ToListAsync();
+            return rooms;
+        }
+
+        public async Task CreateReservationAsync(Reservation model)
+        {
+            var reservation = new Reservation
+            {
+                Id = Guid.NewGuid(),
+                RoomId = model.RoomId,
+                GuestName = model.GuestName,
+                CheckInDate = model.CheckInDate,
+                CheckOutDate = model.CheckOutDate,
+                Notes = model.Notes
+            };
+            await _resRepo.Add(reservation);
         }
     }
 }
