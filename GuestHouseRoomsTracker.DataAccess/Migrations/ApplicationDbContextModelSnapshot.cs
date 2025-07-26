@@ -81,6 +81,9 @@ namespace GuestHouseRoomsTracker.DataAccess.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<Guid?>("ReservationId")
                         .HasColumnType("uniqueidentifier");
 

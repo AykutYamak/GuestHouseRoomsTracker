@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GuestHouseRoomsTracker.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250714125839_InitialSetup")]
-    partial class InitialSetup
+    [Migration("20250726120202_Updated Room Entity")]
+    partial class UpdatedRoomEntity
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -83,6 +83,9 @@ namespace GuestHouseRoomsTracker.DataAccess.Migrations
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid?>("ReservationId")
                         .HasColumnType("uniqueidentifier");
