@@ -18,5 +18,6 @@ namespace GuestHouseRoomsTracker.Models.Room
 
         [Required(ErrorMessage = GuestHouseRoomsTracker.Common.ErrorMessages.RequiredErrorMessage)]
         public bool IsActive { get; set; } = true;
+        public string? Notes { get; set; }
     }
 }

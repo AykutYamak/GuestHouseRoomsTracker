@@ -17,7 +17,7 @@
                             <h1 class="header-title">
                                 <i class="fas fa-bed me-3"></i>Управление на стаи
                             </h1>
-                            <p class="header-subtitle">Управлявайте стаите на вашата къща за гости</p>
+                            <p class="header-subtitle">Управлявайте стаите на вашият хотел</p>
                         </div>
                     </div>
                 </div>
@@ -42,6 +42,7 @@
                                             <th class="border-0 fw-semibold">Номер</th>
                                             <th class="border-0 fw-semibold">Капацитет</th>
                                             <th class="border-0 fw-semibold">Описание</th>
+                                            <th class="border-0 fw-semibold">Бележки</th>
                                             <th class="border-0 fw-semibold">Статус</th>
                                             <th class="border-0 fw-semibold text-center">Действия</th>
                                         </tr>
@@ -55,6 +56,11 @@
                                                 <td class="align-middle">
                                                     <span class="text-truncate d-inline-block" style="max-width: 200px;">
                                                         @room.Description
+                                                    </span>
+                                                </td>
+                                                <td class="align-middle">
+                                                    <span class="text-truncate d-inline-block" style="max-width: 200px;">
+                                                        @room.Notes
                                                     </span>
                                                 </td>
                                                 <td class="align-middle">

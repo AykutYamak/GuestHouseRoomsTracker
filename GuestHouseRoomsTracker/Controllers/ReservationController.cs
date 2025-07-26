@@ -119,5 +119,56 @@ namespace GuestHouseRoomsTracker.Controllers
             TempData["success"] = "Резервацията е създадена успешно.";
             return RedirectToAction("Index");
         }
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Edit(Guid id)
+        {
+            var reservation = await _reservationService.Get(x=>x.Id == id);
+            if (reservation == null)
+                return NotFound();
+
+            var rooms = _roomService.GetAll().ToList();
+            var room = rooms.FirstOrDefault(r => r.Id == reservation.RoomId);
+            var viewModel = new ReservationEditViewModel
+            {
+                GuestName = reservation.GuestName,
+                PhoneNumber = reservation.PhoneNumber,
+                CheckInDate = reservation.CheckInDate,
+                CheckOutDate = reservation.CheckOutDate,
+                RoomNumber = room.RoomNumber,
+                Notes = reservation.Notes,
+                Rooms = rooms
+            };
+
+            return View(viewModel);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Edit(ReservationEditViewModel model)
+        {
+            var room = await _roomService.GetAll()
+                .FirstOrDefaultAsync(r => r.RoomNumber == model.RoomNumber);
+
+            if (room == null)
+            {
+                ModelState.AddModelError("RoomNumber", "Стая с такъв номер не съществува.");
+                TempData["error"] = "Стая с такъв номер не съществува.!";
+
+                return RedirectToAction("Edit", "Reservation");
+            }
+            var res = new Reservation
+            {
+                RoomId = room.Id,
+                GuestName = model.GuestName,
+                CheckInDate = model.CheckInDate,
+                CheckOutDate = model.CheckOutDate,
+                PhoneNumber = model.PhoneNumber,
+                Notes = model.Notes,
+                CreatedAt = DateTime.Now
+            };
+            await _reservationService.Update(res);
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

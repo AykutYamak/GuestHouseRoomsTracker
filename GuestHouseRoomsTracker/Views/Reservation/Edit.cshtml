@@ -17,7 +17,7 @@
                         <h1 class="header-title">
                             <i class="fas fa-edit me-3"></i>Редактирай резервация
                         </h1>
-                        <p class="header-subtitle">Променете информацията за съществуваща резервация</p>
+                        <p class="header-subtitle">Актуализирайте информацията за резервацията</p>
                     </div>
                 </div>
 
@@ -34,10 +34,9 @@
 
                     <!-- Form Container -->
                     <div class="form-container">
-                        <form method="post">
+                        <form asp-action="Edit" asp-controller="Reservation" method="post">
                             @Html.AntiForgeryToken()
-                            @Html.HiddenFor(m => m.Id)
-
+                            
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -45,7 +44,8 @@
                                             <i class="fas fa-user me-2"></i>Име на гост
                                         </label>
                                         <div class="input-group-custom">
-                                            <input asp-for="GuestName" class="form-control form-control-lg" />
+                                            <input asp-for="GuestName" class="form-control form-control-lg"
+                                                   placeholder="напр. Иван Иванов">
                                         </div>
                                         <span asp-validation-for="GuestName" class="text-danger"></span>
                                     </div>
@@ -57,7 +57,8 @@
                                             <i class="fas fa-phone me-2"></i>Телефон
                                         </label>
                                         <div class="input-group-custom">
-                                            <input asp-for="PhoneNumber" class="form-control form-control-lg" />
+                                            <input asp-for="PhoneNumber" class="form-control form-control-lg"
+                                                   placeholder="напр. 0888123456">
                                         </div>
                                         <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                                     </div>
@@ -90,14 +91,28 @@
                                 </div>
                             </div>
 
-                            <div class="form-group mt-2">
-                                <label asp-for="RoomId" class="form-label">
-                                    <i class="fas fa-door-closed me-2"></i>Изберете стая
+                            <div class="mb-4">
+                                <label class="form-label">
+                                    <i class="fas fa-door-closed me-2"></i>Изберете стая:
                                 </label>
-                                <select asp-for="RoomId" asp-items="Model.Rooms" class="form-select form-select-lg">
-                                    <option value="">-- Изберете стая --</option>
-                                </select>
-                                <span asp-validation-for="RoomId" class="text-danger"></span>
+                                <div class="row g-4 d-flex justify-content-center">
+                                    @foreach (var room in Model.Rooms)
+                                    {
+                                        <div class="col-lg-4 col-md-6">
+                                            <input type="radio" name="RoomNumber" value="@room.RoomNumber" class="btn-check" id="room_@room.Id"
+                                            @(room.RoomNumber == Model.RoomNumber ? "checked" : "") required>
+                                            <label class="btn btn-outline-dark text-center room-card" for="room_@room.Id">
+                                                <i class="fas fa-door-closed mb-2"></i>
+                                                <strong>Стая @room.RoomNumber</strong>
+                                                @if (room.Capacity > 0)
+                                                {
+                                                    <div class="small text-muted">Капацитет: @room.Capacity</div>
+                                                }
+                                            </label>
+                                        </div>
+                                    }
+                                </div>
+                                <span asp-validation-for="RoomNumber" class="text-danger"></span>
                             </div>
 
                             <div class="form-group mt-2">
@@ -110,7 +125,7 @@
                             </div>
 
                             <div class="button-group mt-4">
-                                <button type="submit" asp-action="Edit" asp-controller="Reservation" class="btn-primary-custom">
+                                <button type="submit" class="btn-primary-custom">
                                     Запази промените
                                 </button>
                                 <a asp-action="Index" asp-controller="Reservation" class="btn-secondary-custom">

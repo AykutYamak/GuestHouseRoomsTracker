@@ -53,7 +53,8 @@ namespace GuestHouseRoomsTracker.Controllers
                 RoomNumber = model.RoomNumber,
                 Capacity = model.Capacity,
                 Description = model.Description,
-                IsActive = true
+                IsActive = true,
+                Notes = model.Notes
             };
 
             await _roomService.Add(room);
@@ -77,7 +78,9 @@ namespace GuestHouseRoomsTracker.Controllers
                 RoomNumber = room.RoomNumber,
                 Capacity = room.Capacity,
                 Description = room.Description,
-                IsActive = room.IsActive
+                IsActive = room.IsActive,
+                Notes = room.Notes
+
             };
 
             return View(model);
@@ -107,7 +110,8 @@ namespace GuestHouseRoomsTracker.Controllers
                 RoomNumber = model.RoomNumber,
                 Capacity = model.Capacity,
                 Description = model.Description,
-                IsActive = model.IsActive
+                IsActive = model.IsActive,
+                Notes = model.Notes
             };
 
             await _roomService.Update(room);

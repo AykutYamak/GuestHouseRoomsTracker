@@ -23,7 +23,7 @@ namespace GuestHouseRoomsTracker.Models.Entities
         public int Capacity { get; set; }
         [Required(ErrorMessage = GuestHouseRoomsTracker.Common.ErrorMessages.RequiredErrorMessage)]
         public bool IsActive { get; set; } = true;
-        [Required(ErrorMessage = GuestHouseRoomsTracker.Common.ErrorMessages.RequiredErrorMessage)]
+        public string? Notes { get; set; }
         public ICollection<Reservation> Reservations { get; set; }
     }
 }

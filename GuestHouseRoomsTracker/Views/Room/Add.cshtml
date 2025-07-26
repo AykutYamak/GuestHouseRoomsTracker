@@ -71,7 +71,18 @@
                                           placeholder="Добавете подробно описание на стаята - удобства, изглед, специални характеристики..."></textarea>
                                 <span asp-validation-for="Description" class="text-danger"></span>
                             </div>
-
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="Notes" class="form-label">
+                                        <i class="fas fa-hashtag me-2"></i>Бележки
+                                    </label>
+                                    <div class="input-group-custom">
+                                        <input asp-for="Notes" class="form-control form-control-lg"
+                                               placeholder="Неизправен телевизор, в ремонт...">
+                                    </div>
+                                    <span asp-validation-for="Notes" class="text-danger"></span>
+                                </div>
+                            </div>
                             <div class="button-group">
                                 <button type="submit" asp-action="Add" asp-controller="Room"
                                         class="btn-primary-custom">
