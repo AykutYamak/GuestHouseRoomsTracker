@@ -32,11 +32,11 @@
                             @Html.AntiForgeryToken()
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                    <label asp-for="CheckInDate" class="form-label">Дата на настаняване до:</label>
+                                    <label asp-for="CheckInDate" class="form-label"> <i class="bi bi-calendar3 me-2">Дата на настаняване от:</i></label>
                                     <input type="date" asp-for="CheckInDate" class="form-control" />
                                 </div>
                                 <div class="col-md-6">
-                                    <label asp-for="CheckOutDate" class="form-label">Дата на напускане от:</label>
+                                    <label asp-for="CheckOutDate" class="form-label">Дата на напускане до:</label>
                                     <input type="date" asp-for="CheckOutDate" class="form-control" />
                                 </div>
                             </div>

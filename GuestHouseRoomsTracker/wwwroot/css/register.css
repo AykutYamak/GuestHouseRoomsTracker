@@ -13,7 +13,6 @@ body {
     min-height: 100vh;
     color: var(--text-dark);
     margin: 0;
-    padding: 20px 0;
 }
 
 .page-header {

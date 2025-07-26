@@ -75,34 +75,45 @@ namespace GuestHouseRoomsTracker.Controllers
             model.Rooms = rooms.ToList();
             return View(model);
         }
-
         [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         [HttpPost]
         public async Task<IActionResult> Add(ReservationCreateViewModel model)
         {
+            model.Rooms = _roomService.GetAll().ToList();
+
+            if (!model.Rooms.Any())
+            {
+                TempData["error"] = "Няма налични стаи.";
+                return RedirectToAction("Index");
+            }
+
+            if (model.CheckOutDate <= model.CheckInDate)
+            {
+                ModelState.AddModelError("CheckOutDate", "Датата на напускане трябва да е след датата на настаняване.");
+                return View(model);
+            }
+
             var room = await _roomService.GetAll()
                 .FirstOrDefaultAsync(r => r.RoomNumber == model.RoomNumber);
 
             if (room == null)
             {
                 ModelState.AddModelError("RoomNumber", "Стая с такъв номер не съществува.");
-                TempData["error"] = "Стая с такъв номер не съществува.!";
-
-                return RedirectToAction("Add", "Reservation");
+                return View(model);
             }
 
-            var exists = _reservationService.GetAll().Any(r =>
-                r.RoomId == room.Id &&
-                r.CheckInDate == model.CheckInDate &&
-                r.CheckOutDate == model.CheckOutDate);
+            bool conflictExists = await _reservationService.GetAll()
+                .AnyAsync(r => r.RoomId == room.Id &&
+                        r.CheckInDate < model.CheckOutDate &&
+                        r.CheckOutDate > model.CheckInDate);
 
-            if (exists)
+            if (conflictExists)
             {
-                TempData["error"] = "Такава резервация вече съществува.";
-                return RedirectToAction("Add", "Reservation");
+                ModelState.AddModelError(string.Empty,
+                    $"Стая {room.RoomNumber} е резервирана за част от избрания период. Моля изберете други дати.");
+                return View(model);
             }
-
             var reservation = new Reservation
             {
                 Id = Guid.NewGuid(),
@@ -116,7 +127,7 @@ namespace GuestHouseRoomsTracker.Controllers
             };
 
             await _reservationService.Add(reservation);
-            TempData["success"] = "Резервацията е създадена успешно.";
+            TempData["success"] = "Резервацията е създадена успешно!";
             return RedirectToAction("Index");
         }
         [Authorize(Roles = "Admin")]

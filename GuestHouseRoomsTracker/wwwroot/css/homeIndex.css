@@ -75,6 +75,7 @@ body {
     font-size: clamp(1.1rem, 2vw, 1.3rem);
     margin-bottom: 2rem;
     opacity: 0.9;
+    font-weight:500;
 }
 
 .cta-button {
@@ -165,6 +166,7 @@ body {
     color: #333;
     margin-bottom: 60px;
     position: relative;
+    font-weight:bold;
 }
 
     .section-title::after {
@@ -195,6 +197,7 @@ body {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+
 }
 
     .feature-card::before {
@@ -249,6 +252,7 @@ body {
     font-size: 1.5rem;
     margin-bottom: 15px;
     color: #333;
+    font-weight: 600;
 }
 
 .feature-card p {
@@ -261,22 +265,24 @@ body {
     padding: 100px 20px;
     background: linear-gradient(135deg, #2c3e50, #34495e);
     color: white;
-    text-align: center;
+    text-align: center; 
 }
 
 .contact-content {
-    margin: 0 auto;
+    margin-bottom:2rem;
 }
 
 .contact h2 {
     font-size: clamp(2rem, 4vw, 3rem);
     margin-bottom: 20px;
+    font-weight:600;
 }
 
 .contact p {
     font-size: 1.2rem;
     margin-bottom: 30px;
     opacity: 0.9;
+    font-weight:500;
 }
 
 .contact-info {
@@ -378,3 +384,103 @@ body {
         background: rgba(0,0,0,0.9);
         transform: scale(1.05);
     }
+
+
+.map-container {
+    margin: 1rem auto;
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.map-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 50%; /* 2:1 Aspect Ratio */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    transition: all 0.3s ease;
+}
+
+    .map-wrapper::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(210, 105, 30, 0.1), rgba(139, 69, 19, 0.1));
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .map-wrapper:hover::before {
+        opacity: 1;
+    }
+
+    .map-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 15px;
+    }
+
+    .map-wrapper::after {
+        content: '📍 Loading map...';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #666;
+        font-size: 1.1rem;
+        z-index: -1;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .map-container {
+        margin: 1.5rem 0;
+        padding: 0 15px;
+    }
+
+    .map-wrapper {
+        padding-bottom: 60%; /* Slightly taller on mobile */
+        border-radius: 12px;
+    }
+
+        .map-wrapper iframe {
+            border-radius: 12px;
+        }
+}
+
+@media (max-width: 480px) {
+    .map-container {
+        margin: 1rem 0;
+        padding: 0 10px;
+    }
+
+    .map-wrapper {
+        padding-bottom: 70%; /* Even taller on very small screens */
+        border-radius: 10px;
+    }
+
+        .map-wrapper iframe {
+            border-radius: 10px;
+        }
+}
+
+/* Optional: Add a subtle border accent */
+.map-wrapper {
+    border: 2px solid transparent;
+    background: linear-gradient(white, white) padding-box, linear-gradient(135deg, rgba(210, 105, 30, 0.3), rgba(139, 69, 19, 0.3)) border-box;
+}
