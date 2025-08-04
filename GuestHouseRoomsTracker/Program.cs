@@ -40,6 +40,8 @@ internal class Program
 
         using (var scope = app.Services.CreateScope())
         {
+            //var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+            //db.Database.Migrate();
             var serviceProvider = scope.ServiceProvider;
             await RoleSeeder.Initialize(serviceProvider);
         }

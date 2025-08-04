@@ -1,7 +1,7 @@
 ﻿@page
 @model RegisterModel
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Регистрация";
 }
 <head>
     <link rel="stylesheet" href="~/css/register.css" />
@@ -9,10 +9,10 @@
 </head>
 
 <body>
-<div class="main-container">
+<div class="main-container" style="margin-top:10px;">
     <div class="page-header">
-        <h1>🏡 @ViewData["Title"] - Serenity Guest House</h1>
-        <div class="subtitle">Join Our Guest Family</div>
+        <h1>🏡 @ViewData["Title"] - Къща за гости "ДАРИ"</h1>
+            <div class="subtitle">Присъедини се към нашето гостоприемно семейство</div>
     </div>
 
     <div class="row">
@@ -20,11 +20,11 @@
             <div class="register-card">
                 <div class="form-section">
                     <div class="welcome-message">
-                        <h2>Welcome to Our Guest House!</h2>
+                        <h2>Добре дошли в нашата къща за гости!</h2>
                     </div>
 
                     <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-                        <h2 class="section-title">Create Your Guest Account</h2>
+                        <h2 class="section-title">Създай своя гостенски акаунт</h2>
 
                         <div asp-validation-summary="ModelOnly" class="validation-summary text-danger" role="alert"></div>
 
@@ -47,23 +47,22 @@
                         </div>
 
                         <div class="password-requirements">
-                            <h4>Password Requirements:</h4>
+                            <h4>Изисквания за парола:</h4>
                             <ul>
-                                <li>At least 6 characters long</li>
-                                <li>Contains at least one uppercase letter</li>
-                                <li>Contains at least one lowercase letter</li>
-                                <li>Contains at least one number</li>
-                                <li>Contains at least one special character</li>
+                                <li>Поне 6 знака</li>
+                                <li>Поне една главна буква</li>
+                                <li>Поне едно число</li>
+                                <li>Поне един специален знак</li>
                             </ul>
                         </div>
 
                         <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">
-                            Register
+                            Регистриране
                         </button>
                     </form>
 
                     <div class="login-link">
-                        <p>Already have an account? <a asp-page="./Login" asp-route-returnUrl="Model.ReturnUrl">🔑 Sign in here</a></p>
+                        <p>Вече имаш акаунт? <a asp-page="./Login" asp-route-returnUrl="Model.ReturnUrl">🔑 Влез от тук</a></p>
                     </div>
                 </div>
             </div>

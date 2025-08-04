@@ -98,18 +98,22 @@
                                 <div class="row g-4 d-flex justify-content-center">
                                     @foreach (var room in Model.Rooms)
                                     {
-                                        <div class="col-lg-4 col-md-6">
-                                            <input type="radio" name="RoomNumber" value="@room.RoomNumber" class="btn-check" id="room_@room.Id"
-                                            @(room.RoomNumber == Model.RoomNumber ? "checked" : "") required>
-                                            <label class="btn btn-outline-dark text-center room-card" for="room_@room.Id">
-                                                <i class="fas fa-door-closed mb-2"></i>
-                                                <strong>Стая @room.RoomNumber</strong>
-                                                @if (room.Capacity > 0)
-                                                {
-                                                    <div class="small text-muted">Капацитет: @room.Capacity</div>
-                                                }
-                                            </label>
-                                        </div>
+                                        if (room.IsActive != false)
+                                        {
+                                            <div class="col-lg-4 col-md-6">
+                                                <input type="radio" name="RoomNumber" value="@room.RoomNumber" class="btn-check" id="room_@room.Id"
+                                                @(room.RoomNumber == Model.RoomNumber ? "checked" : "") required>
+                                                <label class="btn btn-outline-dark text-center room-card" for="room_@room.Id">
+                                                    <i class="fas fa-door-closed mb-2"></i>
+                                                    <strong>Стая @room.RoomNumber</strong>
+                                                    @if (room.Capacity > 0)
+                                                    {
+                                                        <div class="small text-muted">Капацитет: @room.Capacity човека</div>
+                                                    }
+                                                </label>
+                                            </div>
+                                        }
+                                       
                                     }
                                 </div>
                                 <span asp-validation-for="RoomNumber" class="text-danger"></span>

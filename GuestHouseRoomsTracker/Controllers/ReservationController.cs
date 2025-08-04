@@ -52,7 +52,7 @@ namespace GuestHouseRoomsTracker.Controllers
         {
             var reservations = _reservationService.GetAll()
                 .Include(r => r.Room)
-                .OrderByDescending(r => r.CheckInDate)
+                .OrderBy(r => r.CheckInDate).ThenBy(r => r.CheckOutDate)
                 .ToList();
 
             var model = new ReservationFilterViewModel
@@ -90,7 +90,7 @@ namespace GuestHouseRoomsTracker.Controllers
 
             if (model.CheckOutDate <= model.CheckInDate)
             {
-                ModelState.AddModelError("CheckOutDate", "Датата на напускане трябва да е след датата на настаняване.");
+                TempData["error"] = "Датата на напускане трябва да е след датата на настаняване.";
                 return View(model);
             }
 
@@ -99,7 +99,7 @@ namespace GuestHouseRoomsTracker.Controllers
 
             if (room == null)
             {
-                ModelState.AddModelError("RoomNumber", "Стая с такъв номер не съществува.");
+                TempData["error"] = "Стая с такъв номер не съществува.";
                 return View(model);
             }
 
@@ -110,8 +110,7 @@ namespace GuestHouseRoomsTracker.Controllers
 
             if (conflictExists)
             {
-                ModelState.AddModelError(string.Empty,
-                    $"Стая {room.RoomNumber} е резервирана за част от избрания период. Моля изберете други дати.");
+                TempData["error"] = $"Стая {room.RoomNumber} е резервирана за част от избрания период. Моля изберете други дати.";
                 return View(model);
             }
             var reservation = new Reservation
@@ -162,7 +161,6 @@ namespace GuestHouseRoomsTracker.Controllers
 
             if (room == null)
             {
-                ModelState.AddModelError("RoomNumber", "Стая с такъв номер не съществува.");
                 TempData["error"] = "Стая с такъв номер не съществува.!";
 
                 return RedirectToAction("Edit", "Reservation");

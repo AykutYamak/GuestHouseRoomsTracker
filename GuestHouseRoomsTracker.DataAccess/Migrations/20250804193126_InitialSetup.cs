@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace GuestHouseRoomsTracker.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class UpdatedRoomEntity : Migration
+    public partial class InitialSetup : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

@@ -1,23 +1,23 @@
 ﻿@page
 @model LoginModel
 @{
-    ViewData["Title"] = "Log in";
+    ViewData["Title"] = "Вход";
 }
 <head>
     <link rel="stylesheet" href="~/css/login.css" />
 </head>
 <body>
-<div class="main-container">
+<div class="main-container" style="margin-top:10px;">
     <div class="page-header">
-        <h1>🏡 @ViewData["Title"] - Guest House</h1>
-        <div class="subtitle">Your Home Away From Home</div>
+            <h1>🏡 @ViewData["Title"] - Къща за гости "ДАРИ"</h1>
+        <div class="subtitle">Твоят дом далеч от вкъщи</div>
     </div>
 
     <div class="row">
         <div>
             <div class="login-card">
                 <section class="form-section">
-                    <h2 class="section-title">Guest Account Access</h2>
+                        <h2 class="section-title">Достъп до гостенски акаунт</h2>
                     <form id="account" method="post">
                         <div asp-validation-summary="ModelOnly" class="validation-summary text-danger" role="alert"></div>
 
@@ -42,13 +42,13 @@
 
                         <div>
                             <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">
-                                🔑 Login
+                                🔑 Влез
                             </button>
                         </div>
 
                         <div class="auth-links">
                             <p>
-                                <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">✨ Register as a new guest</a>
+                                <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">✨ Регистрирай се като нов гост</a>
                             </p>
                         </div>
                     </form>
