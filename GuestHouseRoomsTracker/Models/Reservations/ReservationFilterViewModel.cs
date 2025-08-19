@@ -7,6 +7,6 @@ namespace GuestHouseRoomsTracker.Models.Reservations
     {
         public DateTime? CheckInDate { get; set; }
         public DateTime? CheckOutDate { get; set; }
-        public List<Reservation> Reservations { get; set; } = new();
+        public List<Reservation> Reservations { get; set; } 
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using DNBarbershop.Models.EnumClasses;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -7,6 +8,8 @@ namespace GuestHouseRoomsTracker.Models.Reservations
 {
     public class ReservationEditViewModel
     {
+        [Required]
+        public Guid Id { get; set; }
         [Required(ErrorMessage = "Моля, въведете номер на стая.")]
         [Display(Name = "Номер на стая")]
         public string RoomNumber { get; set; }
@@ -32,6 +35,9 @@ namespace GuestHouseRoomsTracker.Models.Reservations
 
         [Display(Name = "Бележки")]
         public string? Notes { get; set; }
+
+        [Required]
+        public ReservationStatus Status { get; set; }
 
         public List<GuestHouseRoomsTracker.Models.Entities.Room> Rooms { get; set; }
     }

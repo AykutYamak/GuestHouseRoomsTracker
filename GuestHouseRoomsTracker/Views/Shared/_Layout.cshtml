@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - GuestHouseRoomsTracker</title>
+    <title>@ViewData["Title"] - MyGuestRooms</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -17,30 +17,52 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow" style="margin:0;padding:0;height:70px;">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" style="margin:0;padding:0;"><img src="~/images/7faa6cd8-0e90-4cea-8f26-1a4f84c5edb3-removebg-preview.png" alt="logo" width="80px" height="80px"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/7faa6cd8-0e90-4cea-8f26-1a4f84c5edb3-removebg-preview.png"
+                         alt="Къща за гости ДАРИ"
+                         width="80"
+                         height="80">
+                </a>
+
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        
                         @if (User.IsInRole(SD.AdminRole))
                         {
-                            <li class="nav-item" style="margin:10px;">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Room" asp-action="Index">Rooms</a>
+                            <li class="nav-item">
+                                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Room" ? "active" : "")"
+                                   asp-area=""
+                                   asp-controller="Room"
+                                   asp-action="Index">
+                                    🏠 Стаи
+                                </a>
                             </li>
-                            <li class="nav-item" style="margin:10px;">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Reservation" asp-action="Index">Reservations</a>
+                            <li class="nav-item">
+                                <a class="nav-link @(ViewContext.RouteData.Values["Controller"]?.ToString() == "Reservation" ? "active" : "")"
+                                   asp-area=""
+                                   asp-controller="Reservation"
+                                   asp-action="Index">
+                                    📋 Резервации
+                                </a>
                             </li>
                         }
                     </ul>
 
-                    <partial name="_LoginPartial" />
-                    <partial name="_Notification" />
+                    <div class="d-flex align-items-center">
+                        <partial name="_LoginPartial" />
+                        <partial name="_Notification" />
+                    </div>
                 </div>
             </div>
         </nav>
@@ -92,7 +114,7 @@
                             </div>
                             <div class="info-item">
                                 <span class="info-label">Updated:</span>
-                                <span class="info-value">@DateTime.Now.ToString("MMM yyyy")</span>
+                                <span class="info-value">Aug @DateTime.Now.ToString("yyyy")</span>
                             </div>
                             @if (User.Identity.IsAuthenticated)
                             {

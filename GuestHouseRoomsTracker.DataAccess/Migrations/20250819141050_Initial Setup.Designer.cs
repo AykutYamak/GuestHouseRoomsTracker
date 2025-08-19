@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GuestHouseRoomsTracker.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250804193126_InitialSetup")]
+    [Migration("20250819141050_Initial Setup")]
     partial class InitialSetup
     {
         /// <inheritdoc />
@@ -54,6 +54,9 @@ namespace GuestHouseRoomsTracker.DataAccess.Migrations
 
                     b.Property<Guid>("RoomId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");

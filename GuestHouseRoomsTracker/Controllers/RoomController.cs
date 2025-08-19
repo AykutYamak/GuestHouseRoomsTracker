@@ -16,9 +16,9 @@ namespace GuestHouseRoomsTracker.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var rooms = _roomService.GetAll().ToList();
+            var rooms = _roomService.GetAll().OrderBy(x=>Convert.ToInt32(x.RoomNumber)).ToList();
             var model = new RoomViewModel { Rooms = rooms };
             return View(model);
         }
@@ -97,11 +97,11 @@ namespace GuestHouseRoomsTracker.Controllers
                 return RedirectToAction("Edit", "Room");
             }
 
-            //var duplicate = await _roomService.Get(r => r.RoomNumber == model.RoomNumber && r.Id != model.Id);
-            //if (duplicate != null)
+            //var exists = _roomService.GetAll().Any(r => r.RoomNumber == model.RoomNumber);
+            //if (exists)
             //{
             //    TempData["error"] = "Стая с този номер вече съществува.";
-            //    return RedirectToAction("Edit", "Room");
+            //    return RedirectToAction("Add", "Room");
             //}
 
             var room = new Room

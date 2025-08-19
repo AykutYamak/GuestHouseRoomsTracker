@@ -62,10 +62,6 @@ namespace GuestHouseRoomsTracker.Core.Services
             }
 
             var entity = await _resRepo.Get(filter);
-            if (entity == null)
-            {
-                throw new InvalidOperationException("No entity matches the specified filter.");
-            }
 
             return entity;
         }
@@ -143,7 +139,10 @@ namespace GuestHouseRoomsTracker.Core.Services
                 GuestName = model.GuestName,
                 CheckInDate = model.CheckInDate,
                 CheckOutDate = model.CheckOutDate,
-                Notes = model.Notes
+                Notes = model.Notes,
+                PhoneNumber = model.PhoneNumber,
+                CreatedAt = DateTime.Now,
+                Status = model.Status
             };
             await _resRepo.Add(reservation);
         }

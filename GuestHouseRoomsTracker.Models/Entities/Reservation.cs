@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using DNBarbershop.Models.EnumClasses;
 
 namespace GuestHouseRoomsTracker.Models.Entities
 {
@@ -24,6 +25,8 @@ namespace GuestHouseRoomsTracker.Models.Entities
         
         [Required(ErrorMessage = GuestHouseRoomsTracker.Common.ErrorMessages.RequiredErrorMessage)]
         public DateTime CreatedAt { get; set; } = DateTime.Now;
+        [Required(ErrorMessage =GuestHouseRoomsTracker.Common.ErrorMessages.RequiredErrorMessage)]
+        public ReservationStatus Status { get; set; }
         
         [ForeignKey(nameof(Room))]
         public Guid RoomId { get; set; }

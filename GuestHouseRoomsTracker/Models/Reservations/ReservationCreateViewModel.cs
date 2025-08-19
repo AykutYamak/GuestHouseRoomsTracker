@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using DNBarbershop.Models.EnumClasses;
+using System.ComponentModel.DataAnnotations;
 namespace GuestHouseRoomsTracker.Models.Reservations
 {
     public class ReservationCreateViewModel
@@ -10,12 +11,12 @@ namespace GuestHouseRoomsTracker.Models.Reservations
         [Required(ErrorMessage = "Моля, въведете дата на настаняване.")]
         [DataType(DataType.Date)]
         [Display(Name = "Дата на настаняване")]
-        public DateTime CheckInDate { get; set; }
+        public DateTime CheckInDate { get; set; } = DateTime.Today;
 
         [Required(ErrorMessage = "Моля, въведете дата на напускане.")]
         [DataType(DataType.Date)]
         [Display(Name = "Дата на напускане")]
-        public DateTime CheckOutDate { get; set; }
+        public DateTime CheckOutDate { get; set; } = DateTime.Today.AddDays(1);
 
         [Required(ErrorMessage = "Моля, въведете телефонен номер.")]
         [Phone(ErrorMessage = "Невалиден телефонен номер.")]
@@ -29,6 +30,8 @@ namespace GuestHouseRoomsTracker.Models.Reservations
         [Display(Name = "Бележки")]
         public string? Notes { get; set; }
 
+        [Required]
+        public ReservationStatus Status { get; set; }
         public List<GuestHouseRoomsTracker.Models.Entities.Room> Rooms { get; set; }
     }
 
