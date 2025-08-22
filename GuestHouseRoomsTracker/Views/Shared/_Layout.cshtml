@@ -1,6 +1,7 @@
 ﻿@using GuestHouseRoomsTracker.Models.Entities
 @using Microsoft.AspNetCore.Identity
 ﻿@using GuestHouseRoomsTracker.Utility
+@using System.Globalization
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -114,7 +115,7 @@
                             </div>
                             <div class="info-item">
                                 <span class="info-label">Updated:</span>
-                                <span class="info-value">Aug @DateTime.Now.ToString("yyyy")</span>
+                                <span class="info-value">@CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(8) @DateTime.Now.ToString("yyyy")</span>
                             </div>
                             @if (User.Identity.IsAuthenticated)
                             {

@@ -1,4 +1,5 @@
-﻿@model GuestHouseRoomsTracker.Models.Reservations.ReservationFilterViewModel
+﻿@using System.Globalization
+@model GuestHouseRoomsTracker.Models.Reservations.ReservationFilterViewModel
 @{
     ViewData["Title"] = "Управление на резервации";
 }
@@ -84,8 +85,8 @@
                                                 <td class="align-middle">@r.GuestName</td>
                                                 <td class="align-middle">@r.PhoneNumber</td>
                                                 <td class="align-middle">@r.Room?.RoomNumber</td>
-                                                <td class="align-middle">@r.CheckInDate.Day.ToString()/@r.CheckInDate.Month.ToString()/@r.CheckInDate.Year.ToString()</td>
-                                                <td class="align-middle">@r.CheckOutDate.Day.ToString()/@r.CheckOutDate.Month.ToString()/@r.CheckOutDate.Year.ToString()</td>
+                                                <td class="align-middle">@r.CheckInDate.Day.ToString() @CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(@r.CheckInDate.Month) @r.CheckInDate.Year.ToString()</td>
+                                                <td class="align-middle">@r.CheckOutDate.Day.ToString() @CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(@r.CheckOutDate.Month) @r.CheckOutDate.Year.ToString()</td>
                                                 <td class="align-middle">@r.Notes</td>
                                                 <td class="align-middle">
                                                     @if (r.Status == DNBarbershop.Models.EnumClasses.ReservationStatus.Completed)
